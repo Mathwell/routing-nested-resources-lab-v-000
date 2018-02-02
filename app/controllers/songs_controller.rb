@@ -23,7 +23,7 @@ class SongsController < ApplicationController
         @song=Song.find(params[:id])
       end
 
-    @song = Song.find(params[:id])
+    #@song = Song.find(params[:id])
   end
 
   def new

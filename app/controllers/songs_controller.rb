@@ -3,7 +3,11 @@ class SongsController < ApplicationController
     binding.pry
     if params[:artist_id]
       @artist=Artist.find_by(params[:artist_id])
-      @songs = Artist.find(params[:artist_id]).songs
+      if @artist.nil?
+        redirect_to artists_path "Artist does not exist"
+      else
+      @songs = @artist.songs
+    end
       #redirect_to songs_path
     else
       @songs = Song.all

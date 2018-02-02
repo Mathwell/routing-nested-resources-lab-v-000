@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
   def index
-
+    binding.pry
     if (params[:artist_id])&(Artist.find(params[:artist_id]))
       @songs = Artist.find(params[:artist_id]).songs
       #redirect_to songs_path
